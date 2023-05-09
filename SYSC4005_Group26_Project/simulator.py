@@ -34,11 +34,26 @@ def calculate_confidence_interval(data):
     return std_dev * stats.t.ppf((1 + confidence_interval) / 2.0, degrees_of_freedom)
 
 
-def save_output_to_file(output_text, i):
+def save_output_to_file(output_text, policy_number, i):
     """Save the results of each simulation run to a text file."""
 
+    operating_policies = {
+        0: "original_policy",
+        1: "random_policy_less_probability_w1",
+        2: "random_policy_more_probability_w1",
+        3: "random_policy_equal_probability",
+        4: "reverse_priority",
+    }
+
     # filename is where the results will be stored
-    file_name = "sysc4005_group26_project/results/sim_run_" + str(i) + ".txt"
+    file_name = (
+        "sysc4005_group26_project/results/"
+        + operating_policies[policy_number]
+        + "/"
+        + "sim_run_"
+        + str(i)
+        + ".txt"
+    )
     f = open(file_name, "w")
     f.write(output_text)
     f.close()
@@ -199,7 +214,7 @@ def run_simulation(sim_time, policy_num):
     print(output_text)
 
     # save result of simulation[i] to /results/sim_run_i.txt
-    save_output_to_file(output_text, i)
+    save_output_to_file(output_text, policy_number, i)
 
 
 if __name__ == "__main__":
