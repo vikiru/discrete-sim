@@ -1,20 +1,20 @@
-Starting simulation [3 / 10] and running for time, t = 10000
+Starting simulation [3 / 10] and running for time, t = 50000
 Results of Simulation for the Original Policy:
-Inspector 1 Avg. Inspection time (C1): 10.062173218918463 +/- 19.578730615909645
-Inspector 2 Avg. Inspection time (C2): 16.26117873180145 +/- 32.94851987638209
-Inspector 2 Avg. Inspection time (C3): 20.314046372734484 +/- 44.227732181411014
-Inspector 1 Avg. Blocked time (C1): 10.062173218918463 +/- 19.578730615909645
-Inspector 2 Avg. Blocked time (C2): 16.26117873180145 +/- 32.94851987638209
-Inspector 2 Avg. Blocked time (C3): 20.314046372734484 +/- 44.227732181411014
-Workstation 1 Avg. Process time: 4.482738531007202 +/- 8.993522178962529
-Workstation 2 Avg. Process time: 9.16894609627868 +/- 18.88752872561238
-Workstation 3 Avg. Process time: 8.866323431553692 +/- 19.360513200661845
-Workstation 1 Avg. Idle time: 6.989327402751985 +/- 18.374687669891966
-Workstation 2 Avg. Idle time: 26.638997177884487 +/- 68.2413159593237
-Workstation 3 Avg. Idle time: 28.27689597434413 +/- 66.96925126358177
-Total P1 produced: 871
-Total P2 produced: 279
-Total P3 produced: 269
-Avg. Buffer Occupancy Using Little's Law For W1: 0.6087704167796979
-Avg. Buffer Occupancy Using Little's Law For W2: 0.7432280212629773
-Avg. Buffer Occupancy Using Little's Law For W3: 0.7606485017098571
+Inspector 1 Avg. Inspection time (C1): 10.447818028535524 +/- 20.35088176709496
+Inspector 2 Avg. Inspection time (C2): 15.199772336978581 +/- 30.66589690705886
+Inspector 2 Avg. Inspection time (C3): 20.482409549488416 +/- 40.74972424829898
+Inspector 1 Avg. Blocked time (C1): 10.447818028535524 +/- 20.35088176709496
+Inspector 2 Avg. Blocked time (C2): 15.199772336978581 +/- 30.66589690705886
+Inspector 2 Avg. Blocked time (C3): 20.482409549488416 +/- 40.74972424829898
+Workstation 1 Avg. Process time: 4.535216572743102 +/- 8.983391484380467
+Workstation 2 Avg. Process time: 10.786840809644794 +/- 20.91775346092793
+Workstation 3 Avg. Process time: 8.822202786028013 +/- 16.597183082794896
+Workstation 1 Avg. Idle time: 7.256860399239896 +/- 19.446576411432876
+Workstation 2 Avg. Idle time: 24.59449181675922 +/- 68.48140801849038
+Workstation 3 Avg. Idle time: 27.485513208771543 +/- 66.00214610156776
+Total P1 produced: 4240
+Total P2 produced: 1412
+Total P3 produced: 1377
+Avg. Buffer Occupancy Using Little's Law For W1: 0.6153817618555432
+Avg. Buffer Occupancy Using Little's Law For W2: 0.6945484489052804
+Avg. Buffer Occupancy Using Little's Law For W3: 0.7569510337695683
