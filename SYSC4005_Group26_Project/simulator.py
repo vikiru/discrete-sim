@@ -51,9 +51,12 @@ def save_output_to_file(output_text, policy_number, i):
         + operating_policies[policy_number]
         + "/"
         + "sim_run_"
-        + str(i)
-        + ".txt"
     )
+
+    if i < 10:
+        file_name += "0" + str(i)
+
+    file_name += ".txt"
     f = open(file_name, "w")
     f.write(output_text)
     f.close()
