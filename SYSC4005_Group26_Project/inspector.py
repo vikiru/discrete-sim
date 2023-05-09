@@ -7,8 +7,8 @@ from workstation import *
 
 
 class Inspector1:
-    # initialize inspector
     def __init__(self, env, work_station_list, policy_number):
+        """Initialize Inspector1 with default values."""
         self.env = env
         self.work_station_list = work_station_list
         self.policy_number = policy_number
@@ -18,14 +18,16 @@ class Inspector1:
         self.service_times = {0: []}  # index 0 for c1
         self.blocked_times = {0: []}  # index 0 for c1
 
-    # used to identify the inspector
     def get_name(self):
-        return "inspector 1"
+        """Used to identify Inspector1."""
+        return "Inspector 1"
 
-    # inspector 1 will determine the best workstation buffer to send its c1
-    # component to, based on the smallest size of the buffer and adhering to
-    # a priority based scheduling and finally return that workstation's buffer
     def determine_min_buffer(self):
+        """
+        Inspector 1 will determine the best workstation buffer to send its c1
+        component to, based on the smallest size of the buffer.Adhering to
+        a priority-based scheduling and finally return that workstation's buffer.
+        """
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -39,21 +41,23 @@ class Inspector1:
         else:
             return w3_buffer
 
-    ## alternate scheduling ideas:
+    # Alternate scheduling ideas:
     # 0) original scheduling
     # 1) w1: 20%, w2, w3: 40-40%
     # 2) w1: 60%, w2, w3: 20-20%
     # 3) w1, w2, w3: 33.33%
     # 4) w3 > w2 > w1
 
-    # the first alternative policy to improve the performance of the system,
-    # by generating a random number between 1 and 10 and if the number
-    # is in a specific range, return that workstation's buffer to place c1 into
-    # this alternate policy focuses on giving workstation 2 and 3 more
-    # probability of getting c1 (both have 40% chance, for a total
-    # of 80% chance)
-    # this means that workstation only has a 20% chance of getting c1
     def random_scheduling_less_probability_w1(self):
+        """
+        The first alternative policy to improve the performance of the system,
+        by generating a random number between 1 and 10 and if the number
+        is in a specific range, return that workstation's buffer to place C1 into.
+
+        This alternate policy focuses on giving workstation 2 and 3 more
+        probability of getting C1 (both have 40% chance, for a total of 80% chance),
+        this means that workstation 1 only has a 20% chance of getting C1.
+        """
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -73,12 +77,15 @@ class Inspector1:
         elif num in w1:
             return w1_buffer
 
-    # the second alternative policy to improve the performance of the system,
-    # by generating a random number between 1 and 10 and if the number
-    # is in a specific range, return that workstation's buffer to place c1 into
-    # this alternate policy focuses on giving workstation 1 more probability
-    # of getting c1 (60% chance) while workstation 2 and 3 only have 20% chance
     def random_scheduling_more_probability_w1(self):
+        """
+        The second alternative policy to improve the performance of the system,
+        by generating a random number between 1 and 10 and if the number is
+        in a specific range, return that workstation's buffer to place c1 into.
+
+        This alternate policy focuses on giving workstation 1 more probability
+        of getting C1 (60% chance) while workstation 2 and 3 only have 20% chance.
+        """
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -99,22 +106,28 @@ class Inspector1:
         elif num in w3:
             return w3_buffer
 
-    # the third alternative policy to improve the performance of the system,
-    # by generating a random number between 0 and 2 and use that number,
-    # to return a workstation's buffer from the list of workstations
-    # this alternate policy focuses on giving all workstation's equal probability
-    # of getting c1, 33.33% chance for all
     def random_scheduling_equal_probability(self):
+        """
+        The third alternative policy to improve the performance of the system,
+        by generating a random number between 0 and 2 and use that number,
+        to return a workstation's buffer from the list of workstations.
+
+        This alternate policy focuses on giving all workstation's equal probability
+        of getting C1, 33.33% chance for all workstations.
+        """
         # 0 coressponds to w1, 1 coressponds to w2 and 2 coressponds to w3
         num = random.randint(0, 2)
         # return the workstation's buffer
         return self.work_station_list[num].c1_buffer
 
-    # the fourth alternative policy to improve the performance of the system
-    # this policy is essentially the same as the original policy except that
-    # instead of w1 having the highest priority, it now has the lowest priority
-    # as such, w3 > w2 > w1 is the new order of priority
     def reverse_priority_scheduling(self):
+        """
+        The fourth alternative policy to improve the performance of the system.
+
+        This policy is essentially the same as the original policy except that
+        instead of w1 having the highest priority, it now has the lowest priority
+        as such, w3 > w2 > w1 is the new order of priority.
+        """
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -128,11 +141,11 @@ class Inspector1:
         else:
             return w1_buffer
 
-    # this will allow the inspector to choose its operating policy
-    # based on an input number and upon utilizing the policy,
-    # will return the respective workstation's buffer according to that
-    # policy
     def policy_selector(self):
+        """
+        Allow the inspector to choose its operating policy based on an input policy number.
+        Based on given policy number, the corresponding workstation's buffer is returned.
+        """
         num = self.policy_number
         if num == 0:
             return self.determine_min_buffer()
@@ -145,8 +158,8 @@ class Inspector1:
         elif num == 4:
             return self.reverse_priority_scheduling()
 
-    # main process loop
     def run(self):
+        """Main process loop for Inspector1 where it will simulate inspection of components and placing into respective workstations."""
         while True:
             # generate a service time based on mean from file and append to
             # list of service times for c1
@@ -168,8 +181,8 @@ class Inspector1:
 
 
 class Inspector2:
-    # initialize inspector
     def __init__(self, env, work_station_list):
+        """Initialize Inspector2 with default values."""
         self.env = env
         self.work_station_list = work_station_list
         self.filename_1 = "servinsp22.dat"  # c2 inspection time file
@@ -180,21 +193,21 @@ class Inspector2:
         self.service_times = {0: [], 1: []}  # index 0 for c2, 1 for c3
         self.blocked_times = {0: [], 1: []}  # index 0 for c2, 1 for c3
 
-    # used to identify the inspector
     def get_name(self):
-        return "inspector 2"
+        """Used to identify Inspector2."""
+        return "Inspector 2"
 
     def get_random_component(self):
-        # 0 corresponds to c2, 1 corresponds to c3
+        """Generate a random number between 0 and 1, 0 refers to a component C2 and 1 refers to a component C3."""
         return random.randint(0, 1)
 
-    # main process loop
     def run(self):
+        """Main process loop for Inspector2 where it will simulate inspection of components and placing into respective workstations."""
         while True:
             if self.get_random_component() == 0:
                 # generate a service time based on mean from file and append to
                 # list of service times for c2
-                inspect_time_c2 = generate_random_mean_time(self.filename1)
+                inspect_time_c2 = generate_random_mean_time(self.filename_1)
                 self.service_times[0].append(inspect_time_c2)
 
                 # inspector is 'inspecting' the component
