@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # In order to analyse the alternate policies,
     # the alternate_simulator will run each policay for a simulation time of t = 50000
-    # once and then repeat for the remaining policies
+    # and then repeat for the remaining policies
 
     print("Starting simulation for Original Policy, t = 50000...")
     for i in range(1, number_of_replications + 1):
