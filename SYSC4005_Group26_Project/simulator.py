@@ -55,6 +55,8 @@ def save_output_to_file(output_text, policy_number, i):
 
     if i < 10:
         file_name += "0" + str(i)
+    else:
+        file_name += str(i)
 
     file_name += ".txt"
     f = open(file_name, "w")
