@@ -11,12 +11,14 @@ def little_law_calc(throughput, avg_time_in_buffer):
     """
     Little's law (l) = throughtput (# of products / unit time) * lead time (workstation idle time).
     """
+
     avg_buffer_occupancy = throughput * avg_time_in_buffer
     return str(avg_buffer_occupancy)
 
 
 def return_avg_with_ci(data):
     """Returns the average of the data along with the confidence interval as a string."""
+
     mean = numpy.mean(data)
     ci = calculate_confidence_interval(data)
     return str(mean) + " +/- " + str(ci)
@@ -24,6 +26,7 @@ def return_avg_with_ci(data):
 
 def calculate_confidence_interval(data):
     """Calculate the 95% confidence interval for each list of data passed."""
+
     std_dev = numpy.std(data)
     degrees_of_freedom = len(data) - 1
     confidence_interval = 0.95
@@ -34,7 +37,7 @@ def calculate_confidence_interval(data):
 def save_output_to_file(output_text, i):
     """Save the results of each simulation run to a text file."""
 
-    # file_name is where the results will be stored
+    # filename is where the results will be stored
     file_name = "sysc4005_group26_project/results/sim_run_" + str(i) + ".txt"
     f = open(file_name, "w")
     f.write(output_text)
@@ -135,7 +138,16 @@ def run_simulation(sim_time, policy_num):
     idle_w3 = return_avg_with_ci(model_workstation_idle_times["w3"])
 
     # output results & save to text file
-    output_text += "\nResults of simulation:\n"
+    operating_policies = {
+        0: "Original Policy",
+        1: "Random Policy, Less Probability for W1",
+        2: "Random Policy, More Probability for W1",
+        3: "Random Policy, Equal Probability for W1",
+        4: "Reverse Priority Policy",
+    }
+    output_text += (
+        "\nResults of Simulation for the " + operating_policies[policy_num] + ":\n"
+    )
     output_text += "Inspector 1 Avg. Inspection time (C1): " + inspect_c1 + "\n"
     output_text += "Inspector 2 Avg. Inspection time (C2): " + inspect_c2 + "\n"
     output_text += "Inspector 2 Avg. Inspection time (C3): " + inspect_c3 + "\n"
@@ -190,11 +202,13 @@ def run_simulation(sim_time, policy_num):
     save_output_to_file(output_text, i)
 
 
-# define total # of replications and how long each replication simulates for
-number_of_replications = 10
-sim_time = 10000
-policy_number = 0  # 0 is used here to use the original operating policy
+if __name__ == "__main__":
 
-# main loop of simulator, will repeat each simulation until number_of_replications
-for i in range(1, number_of_replications + 1):
-    run_simulation(sim_time, policy_number)
+    # define total # of replications and how long each replication simulates for
+    number_of_replications = 10
+    sim_time = 10000
+    policy_number = 0  # 0 is used here to use the original operating policy
+
+    # main loop of simulator, will repeat each simulation until number_of_replications
+    for i in range(1, number_of_replications + 1):
+        run_simulation(sim_time, policy_number)
