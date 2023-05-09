@@ -1,29 +1,33 @@
 # SYSC4005 Project - Group 26
-# Author: Vis Kirubakaran 
-
-import numpy
+# Author: Visakan Kirubakaran
+# Year of Completion: Jan - Apr 2022
 
 # The following functions will be called upon each Inspector & Workstation
 # class in order to specify their actual mean and random mean time values
 
-# Generate a random exponentially distributed random value based on meanTime
-def generateRandomMeanTime(filename):
-    meanTime = getInputDataMeanTime(filename)
-    return numpy.random.exponential(meanTime)
+import numpy
 
 
-# Get the actual mean time value obtained from the input data files
-def getInputDataMeanTime(filename):
-    # folderDir is where the .dat files are stored
-    folderDir = "SYSC4005_Group26_Project/data/"
+def generate_random_mean_time(filename):
+    """Generate a random exponentially distributed random value based on mean time."""
 
-    # Append filename to the folderDir to retrieve the file
-    filename = folderDir + filename
+    mean_time = get_input_data_mean_time(filename)
+    return numpy.random.exponential(mean_time)
+
+
+def get_input_data_mean_time(filename):
+    """Get the actual mean time value obtained from the input data files"""
+
+    # folder_dir is where the .dat files are stored
+    folder_dir = "SYSC4005_Group26_Project/data/"
+
+    # Append filename to the folder_dir to retrieve the file
+    filename = folder_dir + filename
 
     # Sum all the lines of data and return the mean
-    sumData = 0
-    inputData = open(filename).read().splitlines()
+    sum_data = 0
+    input_data = open(filename).read().splitlines()
     for i in range(0, 300):
-        sumData += float(inputData[i])
-    meanTime = sumData / 300
-    return meanTime
+        sum_data += float(input_data[i])
+    mean_time = sum_data / 300
+    return mean_time
