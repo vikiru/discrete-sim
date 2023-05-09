@@ -59,7 +59,7 @@ def save_output_to_file(output_text, policy_number, i):
     f.close()
 
 
-def run_simulation(sim_time, policy_num):
+def run_simulation(sim_time, policy_num, i):
     """
     Run a simulation of the system for given simulation time and policy number. Print the
     results of the simulation and save the results to their corresponding files.
@@ -213,17 +213,18 @@ def run_simulation(sim_time, policy_num):
     # output all of the output_text that has been saved till this point
     print(output_text)
 
-    # save result of simulation[i] to /results/sim_run_i.txt
-    save_output_to_file(output_text, policy_number, i)
+    # save result of simulation[i] to respective folder
+    save_output_to_file(output_text, policy_num, i)
 
+
+# define total # of replications and how long each replication simulates for
+number_of_replications = 10
+sim_time = 10000
 
 if __name__ == "__main__":
 
-    # define total # of replications and how long each replication simulates for
-    number_of_replications = 10
-    sim_time = 10000
     policy_number = 0  # 0 is used here to use the original operating policy
 
     # main loop of simulator, will repeat each simulation until number_of_replications
     for i in range(1, number_of_replications + 1):
-        run_simulation(sim_time, policy_number)
+        run_simulation(sim_time, policy_number, i)
