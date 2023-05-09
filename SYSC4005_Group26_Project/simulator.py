@@ -1,192 +1,172 @@
-# SYSC4005 Project - Group 26
-# Author: Vis Kirubakaran 
+# sysc4005 project - group 26
+# author: vis kirubakaran
 
 import simpy
 from scipy import stats
+from calculations import *
 from workstation import *
 from inspector import *
 
-# Little's Law (L) = Throughtput (# of products / unit time) * Lead Time (Workstation Idle Time)
-def littleLawCalc(throughput, avgTimeInBuffer):
-    avgBufferOccupancy = throughput * avgTimeInBuffer
-    return str(avgBufferOccupancy)
 
-
-# Save the results of each simulation run to a text file
-def saveOutputToFile(outputText, i):
+# save the results of each simulation run to a text file
+def save_output_to_file(output_text, i):
     # filename is where the results will be stored
-    fileName = "SYSC4005_Group26_Project/results/sim_run_" + str(i) + ".txt"
-    f = open(fileName, "w")
-    f.write(outputText)
+    file_name = "sysc4005_group26_project/results/sim_run_" + str(i) + ".txt"
+    f = open(file_name, "w")
+    f.write(output_text)
     f.close()
 
 
-# Returns the average of the data with CI as a string
-def returnAvgWithCI(data):
-    mean = numpy.mean(data)
-    CI = calculateConfidenceInterval(data)
-    return str(mean) + " +/- " + str(CI)
-
-
-# Calculate the 95% Confidence interval for each list of data passed
-def calculateConfidenceInterval(data):
-    stdDev = numpy.std(data)
-    degreesOfFreedom = len(data) - 1
-    confidenceInterval = 0.95
-
-    return stdDev * stats.t.ppf((1 + confidenceInterval) / 2.0, degreesOfFreedom)
-
-
-# The function which handles a single simulation for a given simTime
-def runSimulation(simTime, policyNum):
-    # Define some dictionaries to store simulation results
-    modelInspectTimes = {
-        "Inspector1_C1": [],
-        "Inspector2_C2": [],
-        "Inspector2_C3": [],
+# the function which handles a single simulation for a given sim_time
+def run_simulation(sim_time, policy_num):
+    # define some dictionaries to store simulation results
+    model_inspect_times = {
+        "inspector1_c1": [],
+        "inspector2_c2": [],
+        "inspector2_c3": [],
     }
-    modelInspectorBlockTimes = {
-        "Inspector1_C1": [],
-        "Inspector2_C2": [],
-        "Inspector2_C3": [],
+    model_inspector_block_times = {
+        "inspector1_c1": [],
+        "inspector2_c2": [],
+        "inspector2_c3": [],
     }
-    modelProductsCreated = {"P1": 0, "P2": 0, "P3": 0}
-    modelWorkstationProcessTimes = {"W1": [], "W2": [], "W3": []}
-    modelWorkstationIdleTimes = {"W1": [], "W2": [], "W3": []}
+    model_products_created = {"p1": 0, "p2": 0, "p3": 0}
+    model_workstation_process_times = {"w1": [], "w2": [], "w3": []}
+    model_workstation_idle_times = {"w1": [], "w2": [], "w3": []}
 
-    # Initialize all Inspectors & Workstations
-    envVariable = simpy.Environment()
+    # initialize all inspectors & workstations
+    env_variable = simpy.Environment()
 
-    W1 = Workstation1(envVariable)
-    W2 = Workstation2(envVariable)
-    W3 = Workstation3(envVariable)
-    I1 = Inspector1(envVariable, [W1, W2, W3], policyNum)
-    I2 = Inspector2(envVariable, [W2, W3])
+    w1 = Workstation1(env_variable)
+    w2 = Workstation2(env_variable)
+    w3 = Workstation3(env_variable)
+    i1 = Inspector1(env_variable, [w1, w2, w3], policy_num)
+    i2 = Inspector2(env_variable, [w2, w3])
 
-    # Start simulation
-    outputText = ""
-    outputText += (
-        "Starting simulation ["
+    # start simulation
+    output_text = ""
+    output_text += (
+        "starting simulation ["
         + str(i)
         + " / "
-        + str(numberOfReplications)
+        + str(number_of_replications)
         + "] and running for time, t = "
-        + str(simTime)
+        + str(sim_time)
     )
-    envVariable.run(until=simTime)
+    env_variable.run(until=sim_time)
 
-    # Results
-    # Inspector service times for each component
-    modelInspectTimes["Inspector1_C1"].extend(I1.serviceTime[0])
-    modelInspectTimes["Inspector2_C2"].extend(I2.serviceTime[0])
-    modelInspectTimes["Inspector2_C3"].extend(I2.serviceTime[1])
+    # results
+    # inspector service times for each component
+    model_inspect_times["inspector1_c1"].extend(i1.service_time[0])
+    model_inspect_times["inspector2_c2"].extend(i2.service_time[0])
+    model_inspect_times["inspector2_c3"].extend(i2.service_time[1])
 
-    # Inspector blocked times for each component
-    modelInspectorBlockTimes["Inspector1_C1"].extend(I1.blockedTime[0])
-    modelInspectorBlockTimes["Inspector2_C2"].extend(I2.blockedTime[0])
-    modelInspectorBlockTimes["Inspector2_C3"].extend(I2.blockedTime[1])
+    # inspector blocked times for each component
+    model_inspector_block_times["inspector1_c1"].extend(i1.blocked_time[0])
+    model_inspector_block_times["inspector2_c2"].extend(i2.blocked_time[0])
+    model_inspector_block_times["inspector2_c3"].extend(i2.blocked_time[1])
 
-    # Workstation products created
-    modelProductsCreated["P1"] = W1.productsCreated
-    modelProductsCreated["P2"] = W2.productsCreated
-    modelProductsCreated["P3"] = W3.productsCreated
+    # workstation products created
+    model_products_created["p1"] = w1.products_created
+    model_products_created["p2"] = w2.products_created
+    model_products_created["p3"] = w3.products_created
 
-    # Workstation process times
-    modelWorkstationProcessTimes["W1"].extend(W1.processTime[0])
-    modelWorkstationProcessTimes["W2"].extend(W2.processTime[0])
-    modelWorkstationProcessTimes["W3"].extend(W3.processTime[0])
+    # workstation process times
+    model_workstation_process_times["w1"].extend(w1.process_time[0])
+    model_workstation_process_times["w2"].extend(w2.process_time[0])
+    model_workstation_process_times["w3"].extend(w3.process_time[0])
 
-    # Workstation idle times
-    modelWorkstationIdleTimes["W1"].extend(W1.idleTime[0])
-    modelWorkstationIdleTimes["W2"].extend(W2.idleTime[0])
-    modelWorkstationIdleTimes["W3"].extend(W3.idleTime[0])
+    # workstation idle times
+    model_workstation_idle_times["w1"].extend(w1.idle_time[0])
+    model_workstation_idle_times["w2"].extend(w2.idle_time[0])
+    model_workstation_idle_times["w3"].extend(w3.idle_time[0])
 
-    # Compute averages and CI
+    # compute averages and ci
 
-    # Inspector Inspect and Blocked Times
-    inspectC1 = returnAvgWithCI(modelInspectTimes["Inspector1_C1"])
-    inspectC2 = returnAvgWithCI(modelInspectTimes["Inspector2_C2"])
-    inspectC3 = returnAvgWithCI(modelInspectTimes["Inspector2_C3"])
+    # inspector inspect and blocked times
+    inspect_c1 = return_avg_with_ci(model_inspect_times["inspector1_c1"])
+    inspect_c2 = return_avg_with_ci(model_inspect_times["inspector2_c2"])
+    inspect_c3 = return_avg_with_ci(model_inspect_times["inspector2_c3"])
 
-    blockedC1 = returnAvgWithCI(modelInspectorBlockTimes["Inspector1_C1"])
-    blockedC2 = returnAvgWithCI(modelInspectorBlockTimes["Inspector2_C2"])
-    blockedC3 = returnAvgWithCI(modelInspectorBlockTimes["Inspector2_C3"])
+    blocked_c1 = return_avg_with_ci(model_inspector_block_times["inspector1_c1"])
+    blocked_c2 = return_avg_with_ci(model_inspector_block_times["inspector2_c2"])
+    blocked_c3 = return_avg_with_ci(model_inspector_block_times["inspector2_c3"])
 
-    # Products Created
-    P1total = str(modelProductsCreated["P1"])
-    P2total = str(modelProductsCreated["P2"])
-    P3total = str(modelProductsCreated["P3"])
+    # products created
+    p1total = str(model_products_created["p1"])
+    p2total = str(model_products_created["p2"])
+    p3total = str(model_products_created["p3"])
 
-    # Workstation Process and Idle Times
-    processW1 = returnAvgWithCI(modelWorkstationProcessTimes["W1"])
-    processW2 = returnAvgWithCI(modelWorkstationProcessTimes["W2"])
-    processW3 = returnAvgWithCI(modelWorkstationProcessTimes["W3"])
+    # workstation process and idle times
+    process_w1 = return_avg_with_ci(model_workstation_process_times["w1"])
+    process_w2 = return_avg_with_ci(model_workstation_process_times["w2"])
+    process_w3 = return_avg_with_ci(model_workstation_process_times["w3"])
 
-    idleW1 = returnAvgWithCI(modelWorkstationIdleTimes["W1"])
-    idleW2 = returnAvgWithCI(modelWorkstationIdleTimes["W2"])
-    idleW3 = returnAvgWithCI(modelWorkstationIdleTimes["W3"])
+    idle_w1 = return_avg_with_ci(model_workstation_idle_times["w1"])
+    idle_w2 = return_avg_with_ci(model_workstation_idle_times["w2"])
+    idle_w3 = return_avg_with_ci(model_workstation_idle_times["w3"])
 
-    # Output Results & Save to Text File
-    outputText += "\nResults of Simulation:\n"
-    outputText += "Inspector 1 Avg. Inspection Time (C1): " + inspectC1 + "\n"
-    outputText += "Inspector 2 Avg. Inspection Time (C2): " + inspectC2 + "\n"
-    outputText += "Inspector 2 Avg. Inspection Time (C3): " + inspectC3 + "\n"
+    # output results & save to text file
+    output_text += "\n_results of simulation:\n"
+    output_text += "inspector 1 avg. inspection time (c1): " + inspect_c1 + "\n"
+    output_text += "inspector 2 avg. inspection time (c2): " + inspect_c2 + "\n"
+    output_text += "inspector 2 avg. inspection time (c3): " + inspect_c3 + "\n"
 
-    outputText += "Inspector 1 Avg. Blocked Time (C1): " + blockedC1 + "\n"
-    outputText += "Inspector 2 Avg. Blocked Time (C2): " + blockedC2 + "\n"
-    outputText += "Inspector 2 Avg. Blocked Time (C3): " + blockedC3 + "\n"
+    output_text += "inspector 1 avg. blocked time (c1): " + blocked_c1 + "\n"
+    output_text += "inspector 2 avg. blocked time (c2): " + blocked_c2 + "\n"
+    output_text += "inspector 2 avg. blocked time (c3): " + blocked_c3 + "\n"
 
-    outputText += "Workstation 1 Avg. Process Time: " + processW1 + "\n"
-    outputText += "Workstation 2 Avg. Process Time: " + processW2 + "\n"
-    outputText += "Workstation 3 Avg. Process Time: " + processW3 + "\n"
+    output_text += "workstation 1 avg. process time: " + process_w1 + "\n"
+    output_text += "workstation 2 avg. process time: " + process_w2 + "\n"
+    output_text += "workstation 3 avg. process time: " + process_w3 + "\n"
 
-    outputText += "Workstation 1 Avg. Idle Time: " + idleW1 + "\n"
-    outputText += "Workstation 2 Avg. Idle Time: " + idleW2 + "\n"
-    outputText += "Workstation 3 Avg. Idle Time: " + idleW3 + "\n"
+    output_text += "workstation 1 avg. idle time: " + idle_w1 + "\n"
+    output_text += "workstation 2 avg. idle time: " + idle_w2 + "\n"
+    output_text += "workstation 3 avg. idle time: " + idle_w3 + "\n"
 
-    outputText += "Total P1 Produced: " + P1total + "\n"
-    outputText += "Total P2 Produced: " + P2total + "\n"
-    outputText += "Total P3 Produced: " + P3total + "\n"
+    output_text += "total p1 produced: " + p1total + "\n"
+    output_text += "total p2 produced: " + p2total + "\n"
+    output_text += "total p3 produced: " + p3total + "\n"
 
-    # Calculate throughput (products / unit time)
-    throughputW1 = numpy.mean(modelProductsCreated["P1"] / simTime)
-    throughputW2 = numpy.mean(modelProductsCreated["P2"] / simTime)
-    throughputW3 = numpy.mean(modelProductsCreated["P3"] / simTime)
+    # calculate throughput (products / unit time)
+    throughput_w1 = numpy.mean(model_products_created["p1"] / sim_time)
+    throughput_w2 = numpy.mean(model_products_created["p2"] / sim_time)
+    throughput_w3 = numpy.mean(model_products_created["p3"] / sim_time)
 
-    # Calculate avg time spent in queue using workstation idle time
-    avgTimeInBufferW1 = numpy.mean(modelWorkstationIdleTimes["W1"])
-    avgTimeInBufferW2 = numpy.mean(modelWorkstationIdleTimes["W2"])
-    avgTimeInBufferW3 = numpy.mean(modelWorkstationIdleTimes["W3"])
+    # calculate avg time spent in queue using workstation idle time
+    avg_time_in_buffer_w1 = numpy.mean(model_workstation_idle_times["w1"])
+    avg_time_in_buffer_w2 = numpy.mean(model_workstation_idle_times["w2"])
+    avg_time_in_buffer_w3 = numpy.mean(model_workstation_idle_times["w3"])
 
-    # Output Little Law Results for all Workstations
-    outputText += (
-        "Avg. Buffer Occupancy using Little's Law for W1: "
-        + littleLawCalc(throughputW1, avgTimeInBufferW1)
+    # output little law results for all workstations
+    output_text += (
+        "avg. buffer occupancy using little's law for w1: "
+        + little_law_calc(throughput_w1, avg_time_in_buffer_w1)
         + "\n"
     )
-    outputText += (
-        "Avg. Buffer Occupancy using Little's Law for W2: "
-        + littleLawCalc(throughputW2, avgTimeInBufferW2)
+    output_text += (
+        "avg. buffer occupancy using little's law for w2: "
+        + little_law_calc(throughput_w2, avg_time_in_buffer_w2)
         + "\n"
     )
-    outputText += (
-        "Avg. Buffer Occupancy using Little's Law for W3: "
-        + littleLawCalc(throughputW3, avgTimeInBufferW3)
+    output_text += (
+        "avg. buffer occupancy using little's law for w3: "
+        + little_law_calc(throughput_w3, avg_time_in_buffer_w3)
         + "\n"
     )
 
-    # Output all of the outputText that has been saved till this point
-    print(outputText)
+    # output all of the output_text that has been saved till this point
+    print(output_text)
 
-    # Save result of simulation[i] to /results/simRun_i.txt
-    saveOutputToFile(outputText, i)
+    # save result of simulation[i] to /results/sim_run_i.txt
+    save_output_to_file(output_text, i)
 
 
-# Define total # of replications and how long each replication simulates for
-numberOfReplications = 10
-simTime = 10000
-policyNumber = 0  # 0 is used here to use the original operating policy
+# define total # of replications and how long each replication simulates for
+number_of_replications = 10
+sim_time = 10000
+policy_number = 0  # 0 is used here to use the original operating policy
 
-# Main loop of simulator, will repeat each simulation until numberOfReplications
-for i in range(1, numberOfReplications + 1):
-    runSimulation(simTime, policyNumber)
+# main loop of simulator, will repeat each simulation until number_of_replications
+for i in range(1, number_of_replications + 1):
+    run_simulation(sim_time, policy_number)

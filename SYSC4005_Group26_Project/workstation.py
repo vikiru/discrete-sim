@@ -1,5 +1,6 @@
 # SYSC4005 Project - Group 26
-# Author: Vis Kirubakaran 
+# Author: Visakan Kirubakaran
+# Year of Completion: Jan - Apr 2022
 
 import simpy
 from input_modeling import *
@@ -10,15 +11,15 @@ class Workstation1:
     def __init__(self, env):
         self.env = env
         self.filename = "ws1.dat"
-        self.C1Buffer = simpy.Container(self.env, 2, 0)
-        self.processTime = getInputDataMeanTime(self.filename)
+        self.c1_buffer = simpy.Container(self.env, 2, 0)
+        self.process_time = get_input_data_mean_time(self.filename)
         self.action = env.process(self.run())
-        self.productsCreated = 0
-        self.processTime = {0: []}  # Index 0 for W1
-        self.idleTime = {0: []}  # Index 0 for W1
+        self.products_created = 0
+        self.process_time = {0: []}  # index 0 for w1
+        self.idle_time = {0: []}  # index 0 for W1
 
     # Used to identify the Workstation
-    def getName(self):
+    def get_name(self):
         return "W1"
 
     # Main process loop,
@@ -27,14 +28,14 @@ class Workstation1:
     # lists respectively
     def run(self):
         while True:
-            startTime = self.env.now
-            yield self.C1Buffer.get(1)
-            endTime = self.env.now - startTime
-            self.idleTime[0].append(endTime)
-            processTime = generateRandomMeanTime(self.filename)
-            yield self.env.timeout(processTime)
-            self.processTime[0].append(processTime)
-            self.productsCreated += 1
+            start_time = self.env.now
+            yield self.c1_buffer.get(1)
+            end_time = self.env.now - start_time
+            self.idle_time[0].append(end_time)
+            process_time = generate_random_mean_time(self.filename)
+            yield self.env.timeout(process_time)
+            self.process_time[0].append(process_time)
+            self.products_created += 1
 
 
 class Workstation2:
@@ -42,16 +43,16 @@ class Workstation2:
     def __init__(self, env):
         self.env = env
         self.filename = "ws2.dat"
-        self.C1Buffer = simpy.Container(self.env, 2, 0)
-        self.C2Buffer = simpy.Container(self.env, 2, 0)
-        self.processTime = getInputDataMeanTime(self.filename)
+        self.c1_buffer = simpy.Container(self.env, 2, 0)
+        self.c2_buffer = simpy.Container(self.env, 2, 0)
+        self.process_time = get_input_data_mean_time(self.filename)
         self.action = env.process(self.run())
-        self.productsCreated = 0
-        self.processTime = {0: []}  # Index 0 for W2
-        self.idleTime = {0: []}  # Index 0 for W2
+        self.products_created = 0
+        self.process_time = {0: []}  # index 0 for w2
+        self.idle_time = {0: []}  # Index 0 for W2
 
     # Used to identify the Workstation
-    def getName(self):
+    def get_name(self):
         return "W2"
 
     # Main process loop,
@@ -60,14 +61,14 @@ class Workstation2:
     # lists respectively
     def run(self):
         while True:
-            startTime = self.env.now
-            yield self.C1Buffer.get(1) and self.C2Buffer.get(1)
-            endTime = self.env.now - startTime
-            self.idleTime[0].append(endTime)
-            processTime = generateRandomMeanTime(self.filename)
-            yield self.env.timeout(processTime)
-            self.processTime[0].append(processTime)
-            self.productsCreated += 1
+            start_time = self.env.now
+            yield self.c1_buffer.get(1) and self.c2_buffer.get(1)
+            end_time = self.env.now - start_time
+            self.idle_time[0].append(end_time)
+            process_time = generate_random_mean_time(self.filename)
+            yield self.env.timeout(process_time)
+            self.process_time[0].append(process_time)
+            self.products_created += 1
 
 
 class Workstation3:
@@ -75,16 +76,16 @@ class Workstation3:
     def __init__(self, env):
         self.env = env
         self.filename = "ws3.dat"
-        self.C1Buffer = simpy.Container(self.env, 2, 0)
-        self.C3Buffer = simpy.Container(self.env, 2, 0)
-        self.processTime = getInputDataMeanTime(self.filename)
+        self.c1_buffer = simpy.Container(self.env, 2, 0)
+        self.c3_buffer = simpy.Container(self.env, 2, 0)
+        self.process_time = get_input_data_mean_time(self.filename)
         self.action = env.process(self.run())
-        self.productsCreated = 0
-        self.processTime = {0: []}  # Index 0 for W3
-        self.idleTime = {0: []}  # Index 0 for W3
+        self.products_created = 0
+        self.process_time = {0: []}  # index 0 for w3
+        self.idle_time = {0: []}  # Index 0 for W3
 
     # Used to identify the Workstation
-    def getName(self):
+    def get_name(self):
         return "W3"
 
     # Main process loop,
@@ -93,11 +94,11 @@ class Workstation3:
     # lists respectively
     def run(self):
         while True:
-            startTime = self.env.now
-            yield self.C1Buffer.get(1) and self.C3Buffer.get(1)
-            endTime = self.env.now - startTime
-            self.idleTime[0].append(endTime)
-            processTime = generateRandomMeanTime(self.filename)
-            yield self.env.timeout(processTime)
-            self.processTime[0].append(processTime)
-            self.productsCreated += 1
+            start_time = self.env.now
+            yield self.c1_buffer.get(1) and self.c3_buffer.get(1)
+            end_time = self.env.now - start_time
+            self.idle_time[0].append(end_time)
+            process_time = generate_random_mean_time(self.filename)
+            yield self.env.timeout(process_time)
+            self.process_time[0].append(process_time)
+            self.products_created += 1
