@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
+[![Documentation](https://img.shields.io/badge/documentation-docs-aqua)]()
 
 
 
