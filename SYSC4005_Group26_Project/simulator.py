@@ -1,5 +1,6 @@
-# sysc4005 project - group 26
-# author: vis kirubakaran
+# SYSC4005 Project - Group 26
+# Author: Visakan Kirubakaran
+# Year of Completion: Jan - Apr 2022
 
 import simpy
 from scipy import stats
