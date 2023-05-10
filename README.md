@@ -53,9 +53,13 @@ python alternate_simulator.py
 
 <p align="justify">
 The data folder contains the input data that is required for the simulation of the manufacturing facility. This data includes the servicing times of the inspectors who check the quality of the components, and the processing times of the workstations that assemble the components into products. 
+</p>
 
+<p align="justify">
 The policy comparison folder contains a report that compares the performance of the original policy and four alternative policies that were proposed to improve the efficiency of the facility. Each policy was simulated for a time period of t = 50000 units, which represents the duration of the production cycle. 
+</p>
 
+<p align="justify">
 The results folder contains sub-folders for each policy, where the simulation results are stored as .txt files. Each file contains information such as the number of products produced, the average waiting time of the workstations, and the utilization rate of the workstations.
 </p>
 
