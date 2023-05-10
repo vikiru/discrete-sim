@@ -7,29 +7,40 @@ The manufacturing facility produces different products (P1, P2, P3) using differ
 </blockquote>
 
 <p align="justify">
-This repository contains my work for the SYSC4005 term project where I have completed a discrete simulation of the above problem which represents a manufacturing facility. The goal of this simulation was to find an alternative operating policy that would improve the performance of the system.
+This repository showcases my term project for SYSC4005, in which I developed a discrete simulation model of a manufacturing facility based on the given problem statement. The purpose of this simulation study was to identify and evaluate an alternative operating policy that could enhance the system performance.
 </p>
    
 ## Prerequisites
 
-- [Python]()
-- 
+- [Python](https://www.python.org/downloads/).
+   - [NumPy](https://numpy.org/install/)
+   - [SciPy](https://scipy.org/install/)
+   - [SimPy](https://pypi.org/project/simpy/)
 
 ## Setup & Install Instructions
+
 1. Clone this repository to your local machine.
+
+```bash
+git clone https://github.com/vikiru/discrete-sim.git
+```
+
 2. Install all required Python dependencies (NumPy, SciPy, SimPy)
-3. cd to project root 
 
 ```bash
 pip install -r requirements.txt
 ```
+
+3. cd to project root 
+
+
 # Running the Simulator
 
 # Understanding the Results
 
 ## Acknowledgements
-- Uses [NumPy]()
-- Uses [SciPy]()
-- Uses [SimPy]()
+- Uses [NumPy](https://numpy.org/)
+- Uses [SciPy](https://scipy.org/)
+- Uses [SimPy](https://simpy.readthedocs.io/en/latest/)
 
 ## License
