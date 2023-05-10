@@ -11,14 +11,13 @@ from inspector import *
 # define total # of replications
 number_of_replications = 10
 
-# define total # of replications and how long each replication simulates for
+# define how long each replication simulates for
 sim_time = 50000
 
 if __name__ == "__main__":
 
-    # In order to analyse the alternate policies,
-    # the alternate_simulator will run each policay for a simulation time of t = 50000
-    # and then repeat for the remaining policies
+    # In order to analyse the alternate policies, the alternate_simulator will run each policay for a 
+    # simulation time of t = 50000 and then repeat for the remaining policies.
 
     print("Starting simulation for Original Policy, t = 50000...")
     for i in range(1, number_of_replications + 1):
