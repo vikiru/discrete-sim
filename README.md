@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
+
+
 
 <h1 align="center"> SYSC4005 <br> Discrete Simulation Project </h1>
 
@@ -12,7 +15,7 @@ This repository showcases my term project for SYSC4005, in which I developed a d
    
 ## Prerequisites
 
-- [Python](https://www.python.org/downloads/).
+- [Python](https://www.python.org/downloads/)
    - [NumPy](https://numpy.org/install/)
    - [SciPy](https://scipy.org/install/)
    - [SimPy](https://pypi.org/project/simpy/)
@@ -35,6 +38,7 @@ pip install -r requirements.txt
 
 <p align="justify">
 This repository contains two simulators that model the behavior of a manufacturing facility under different operating policies. The original simulator implements the current policy that the facility follows, while the alternate simulator tests the current policy against the alternative policies that I have devised based on various criteria. The original simulator runs for a fixed time period of t = 10000 units while the alternate simulator runs for a fixed time period of t = 50000 units. Every unique operating policy is repeated 10 times to obtain statistical estimates of the system performance in both simulators.
+</p>
 
 The original simulator can be started as follows:
 
@@ -47,7 +51,6 @@ The alternate simulator can be started as follows:
 ```bash
 python alternate_simulator.py
 ```
-</p>
 
 # Understanding the Results
 
@@ -56,7 +59,7 @@ The data folder contains the input data that is required for the simulation of t
 </p>
 
 <p align="justify">
-The policy comparison folder contains a report that compares the performance of the original policy and four alternative policies that were proposed to improve the efficiency of the facility. Each policy was simulated for a time period of t = 50000 units, which represents the duration of the production cycle. 
+The policy comparison folder contains a text files that compare the performance of the original policy and the four alternative policies that were proposed to improve the efficiency of the facility. Each policy was simulated for a time period of t = 50000 units, which represents the duration of the production cycle. 
 </p>
 
 <p align="justify">
@@ -69,3 +72,7 @@ The results folder contains sub-folders for each policy, where the simulation re
 - Uses [SimPy](https://simpy.readthedocs.io/en/latest/) to simulate the manufacturing facility.
 
 ## License
+
+The contents of this repository are licensed under the terms and conditions of the [MIT](https://choosealicense.com/licenses/mit/) license.
+
+[MIT](https://github.com/vikiru/discrete-sim/blob/update-readme/LICENSE) © 2023 Visakan Kirubakaran.
