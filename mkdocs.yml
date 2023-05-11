@@ -23,24 +23,28 @@ theme:
     text: Roboto
   language: en
   features:
-    - search.suggest
-    - navigation.tracking
-    - navigation.path
-    - navigation.instant
-    - navigation.sections
+    - header.autohide
     - navigation.expand
-    - navigation.top
     - navigation.footer
+    - navigation.instant
+    - navigation.path
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+
   icon:
     repo: fontawesome/brands/github
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
       primary: cyan
       accent: blue
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
         icon: material/weather-night
         name: Switch to light mode
