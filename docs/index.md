@@ -1,12 +1,22 @@
-<style>
-    p {
-        text-align: justify;
-    }
+p<style>
+p {
+text-align: justify;
+}
 </style>
 
 # Discrete Simulation Project [Group 26] Docs!
 
 [![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
+
+<p align="center">
+    <a href="https://vikiru.github.io/discrete-sim/setup/">Prerequisites and Setup</a>
+    •
+    <a href="https://vikiru.github.io/discrete-sim/license/">Acknowledgements and License</a>
+    •
+    <a href="https://vikiru.github.io/discrete-sim/input_modeling/">Source Code Reference</a>
+    •
+    <a href="https://vikiru.github.io/discrete-sim/usage/">Usage</a>
+</p>
 
 ## Project Description
 
