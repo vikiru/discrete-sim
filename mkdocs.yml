@@ -6,15 +6,16 @@ repo_name: discrete-sim
 nav:
   - Home: index.md
   - Prerequistes and Setup: setup.md
-  - Running the Simulator: usage.md
-  - Understanding the Results: results.md
-  - Acknolwedgement & License: license.md
+  - Acknowledgements & License: license.md
   - Source Code Reference:
       - Input Modeling: input_modeling.md
       - Inspector: inspector.md
       - Workstation: workstation.md
       - Simulator: simulator.md
       - Alternate Simulator: alternate_simulator.md
+  - Using the Project & Understanding the Results:
+      - Running the Simulator: usage.md
+      - Understanding the Results: results.md
 
 theme:
   name: material
