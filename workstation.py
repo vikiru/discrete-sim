@@ -9,6 +9,7 @@ from input_modeling import *
 class Workstation1:
     def __init__(self, env):
         """Initialize Workstation1 with default values."""
+        
         self.env = env
         self.filename = "ws1.dat"
         self.c1_buffer = simpy.Container(self.env, 2, 0)
@@ -20,6 +21,7 @@ class Workstation1:
 
     def get_name(self):
         """Used to identify Workstation1."""
+        
         return "W1"
 
     def run(self):
@@ -28,6 +30,7 @@ class Workstation1:
         is able to get a component then it moves on to processing the component, updating
         both the idle and process time lists respectively.
         """
+        
         while True:
             start_time = self.env.now
             yield self.c1_buffer.get(1)
@@ -42,6 +45,7 @@ class Workstation1:
 class Workstation2:
     def __init__(self, env):
         """Initialize Workstation2 with default values."""
+        
         self.env = env
         self.filename = "ws2.dat"
         self.c1_buffer = simpy.Container(self.env, 2, 0)
@@ -54,6 +58,7 @@ class Workstation2:
 
     def get_name(self):
         """Used to identify Workstation2."""
+        
         return "W2"
 
     def run(self):
@@ -62,6 +67,7 @@ class Workstation2:
         is able to get a component then it moves on to processing the component, updating
         both the idle and process time lists respectively.
         """
+        
         while True:
             start_time = self.env.now
             yield self.c1_buffer.get(1) and self.c2_buffer.get(1)
@@ -76,6 +82,7 @@ class Workstation2:
 class Workstation3:
     def __init__(self, env):
         """Initialize Workstation3 with default values."""
+        
         self.env = env
         self.filename = "ws3.dat"
         self.c1_buffer = simpy.Container(self.env, 2, 0)
@@ -88,6 +95,7 @@ class Workstation3:
 
     def get_name(self):
         """Used to identify Workstation3."""
+        
         return "W3"
 
     def run(self):
@@ -96,6 +104,7 @@ class Workstation3:
         is able to get a component then it moves on to processing the component, updating
         both the idle and process time lists respectively.
         """
+        
         while True:
             start_time = self.env.now
             yield self.c1_buffer.get(1) and self.c3_buffer.get(1)

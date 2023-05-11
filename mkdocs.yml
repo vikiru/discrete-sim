@@ -1,0 +1,23 @@
+site_name: Discrete Simulation Project
+site_url: https://vikiru.github.io/discrete-sim/docs
+
+nav:
+  - Home: index.md
+  - Prerequistes and Setup: setup.md
+  - Input Modeling: input_modeling.md
+  - Inspector: inspector.md
+  - Workstation: workstation.md
+  - Simulator: simulator.md
+  - Alternate Simulator: alternate_simulator.md
+  - Acknolwedgement & License: license.md
+
+theme: "material"
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_root_heading: false
+            show_source: false
