@@ -1,0 +1,20 @@
+Starting simulation [6 / 10] and running for time, t = 50000
+Results of Simulation for the Original Policy:
+Inspector 1 Avg. Inspection time (C1): 10.466763049103685 +/- 19.715700049277853
+Inspector 2 Avg. Inspection time (C2): 16.680264538392443 +/- 33.64667755302599
+Inspector 2 Avg. Inspection time (C3): 20.155159906614184 +/- 37.61774265553706
+Inspector 1 Avg. Blocked time (C1): 10.466763049103685 +/- 19.715700049277853
+Inspector 2 Avg. Blocked time (C2): 16.680264538392443 +/- 33.64667755302599
+Inspector 2 Avg. Blocked time (C3): 20.155159906614184 +/- 37.61774265553706
+Workstation 1 Avg. Process time: 4.636942511795616 +/- 8.997367442980034
+Workstation 2 Avg. Process time: 11.069024124089506 +/- 22.01730378655363
+Workstation 3 Avg. Process time: 8.630667402959142 +/- 16.619297123484763
+Workstation 1 Avg. Idle time: 7.188492159657002 +/- 18.70538496377803
+Workstation 2 Avg. Idle time: 24.529753085851222 +/- 67.12589628289491
+Workstation 3 Avg. Idle time: 29.80139211013004 +/- 69.19707698233613
+Total P1 produced: 4228
+Total P2 produced: 1403
+Total P3 produced: 1299
+Avg. Buffer Occupancy Using Little's Law For W1: 0.6078588970205961
+Avg. Buffer Occupancy Using Little's Law For W2: 0.6883048715889853
+Avg. Buffer Occupancy Using Little's Law For W3: 0.7742401670211784

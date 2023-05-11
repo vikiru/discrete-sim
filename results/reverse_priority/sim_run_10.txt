@@ -1,0 +1,20 @@
+Starting simulation [10 / 10] and running for time, t = 50000
+Results of Simulation for the Reverse Priority Policy:
+Inspector 1 Avg. Inspection time (C1): 10.495788885719106 +/- 20.872219316522695
+Inspector 2 Avg. Inspection time (C2): 16.0007824122383 +/- 29.997756204533832
+Inspector 2 Avg. Inspection time (C3): 21.147807773766566 +/- 40.54294351882279
+Inspector 1 Avg. Blocked time (C1): 10.495788885719106 +/- 20.872219316522695
+Inspector 2 Avg. Blocked time (C2): 16.0007824122383 +/- 29.997756204533832
+Inspector 2 Avg. Blocked time (C3): 21.147807773766566 +/- 40.54294351882279
+Workstation 1 Avg. Process time: 4.667104941156506 +/- 9.350632046575798
+Workstation 2 Avg. Process time: 11.272750976534315 +/- 20.96135097909009
+Workstation 3 Avg. Process time: 8.290111370800451 +/- 16.18817303395058
+Workstation 1 Avg. Idle time: 26.545411872413542 +/- 105.92889687422951
+Workstation 2 Avg. Idle time: 26.295816878736137 +/- 75.82040068224697
+Workstation 3 Avg. Idle time: 28.778054456179387 +/- 63.677246914196985
+Total P1 produced: 1601
+Total P2 produced: 1330
+Total P3 produced: 1348
+Avg. Buffer Occupancy Using Little's Law For W1: 0.8499840881546816
+Avg. Buffer Occupancy Using Little's Law For W2: 0.6994687289743812
+Avg. Buffer Occupancy Using Little's Law For W3: 0.7758563481385963
