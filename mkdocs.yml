@@ -1,17 +1,40 @@
 site_name: Discrete Simulation Project
 site_url: https://vikiru.github.io/discrete-sim/docs
+repo_url: https://github.com/vikiru/discrete-sim
+repo_name: discrete-sim
 
 nav:
   - Home: index.md
   - Prerequistes and Setup: setup.md
-  - Input Modeling: input_modeling.md
-  - Inspector: inspector.md
-  - Workstation: workstation.md
-  - Simulator: simulator.md
-  - Alternate Simulator: alternate_simulator.md
+  - Running the Simulator: usage.md
+  - Understanding the Results: results.md
   - Acknolwedgement & License: license.md
+  - Source Code Reference:
+      - Input Modeling: input_modeling.md
+      - Inspector: inspector.md
+      - Workstation: workstation.md
+      - Simulator: simulator.md
+      - Alternate Simulator: alternate_simulator.md
 
-theme: "material"
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tracking
+    - navigation.path
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+  icon:
+    repo: fontawesome/brands/github
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vikiru
+copyright: Copyright &copy; 2022 - 2023 Visakan Kirubakaran
+
 plugins:
   - search
   - mkdocstrings:

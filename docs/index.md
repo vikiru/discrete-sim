@@ -1,7 +1,6 @@
 # Discrete Simulation Project [Group 26] Docs!
 
 [![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-repo-black)](https://github.com/vikiru/discrete-sim/)
 
 ## Project Description
 
