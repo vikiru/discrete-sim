@@ -3,6 +3,10 @@
 <style>
     a[href="#input_modeling"] {
     display: none;
+
+    p {
+        text-align: justify;
+    }
 }
 </style>
 

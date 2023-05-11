@@ -1,3 +1,9 @@
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+
 # Alternate Simulator
 
 <p align="justify">

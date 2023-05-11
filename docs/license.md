@@ -1,3 +1,9 @@
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+
 # Acknowledgements and License
 
 ## Acknowledgements

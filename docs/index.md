@@ -1,3 +1,9 @@
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+
 # Discrete Simulation Project [Group 26] Docs!
 
 [![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)

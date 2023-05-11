@@ -37,13 +37,13 @@ theme:
     - scheme: default
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to dark mode
       primary: cyan
       accent: blue
     - scheme: slate
       toggle:
         icon: material/weather-night
-        name: Switch to dark mode
+        name: Switch to light mode
       primary: blue
       accent: cyan
 extra:

@@ -1,3 +1,9 @@
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+
 # Prerequisites and Setup of the Project
 
 ## Prerequisites

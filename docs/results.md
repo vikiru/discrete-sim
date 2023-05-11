@@ -1,3 +1,9 @@
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+
 # Understanding the Results
 
 ## Folder Descriptions
@@ -43,7 +49,7 @@ Avg. Buffer Occupancy Using Little's Law For W3: 0.7533076159527275
 
 The input data for the folder including average inspection times for each inspector with their respective components and workstation processing times can be found in the [data](https://github.com/vikiru/discrete-sim/tree/backup-docs/data) folder.
 
-## Policy Comparion Folder
+## Policy Comparison Folder
 
 A comparison of each of the operating policies simulated at a time, t = 50000 units of time can be found [here](https://github.com/vikiru/discrete-sim/tree/main/policy_comparison/).
 
