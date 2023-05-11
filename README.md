@@ -34,7 +34,7 @@ git clone https://github.com/vikiru/discrete-sim.git
 pip install -r requirements.txt
 ```
 
-# Running the Simulator
+## Running the Simulator
 
 <p align="justify">
 This repository contains two simulators that model the behavior of a manufacturing facility under different operating policies. The original simulator implements the current policy that the facility follows, while the alternate simulator tests the current policy against the alternative policies that I have devised based on various criteria. The original simulator runs for a fixed time period of t = 10000 units while the alternate simulator runs for a fixed time period of t = 50000 units. Every unique operating policy is repeated 10 times to obtain statistical estimates of the system performance in both simulators.
@@ -52,7 +52,7 @@ The alternate simulator can be started as follows:
 python alternate_simulator.py
 ```
 
-# Understanding the Results
+## Understanding the Results
 
 <p align="justify">
 The data folder contains the input data that is required for the simulation of the manufacturing facility. This data includes the servicing times of the inspectors who check the quality of the components, and the processing times of the workstations that assemble the components into products. 
