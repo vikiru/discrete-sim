@@ -8,7 +8,7 @@
 
 ## Acknowledgements
 
-- Uses [NumPy](https://numpy.org/) for generating random values based on exponential distributions.
+- Uses [NumPy](https://numpy.org/) for generating random values based on an exponential distribution.
 - Uses [SciPy](https://scipy.org/) for statistical functions.
 - Uses [SimPy](https://simpy.readthedocs.io/en/latest/) to simulate the manufacturing facility.
 
