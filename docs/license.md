@@ -10,4 +10,4 @@
 
 The contents of this repository are licensed under the terms and conditions of the [MIT](https://choosealicense.com/licenses/mit/) license.
 
-[MIT](https://github.com/vikiru/discrete-sim/blob/update-readme/LICENSE) © 2023 Visakan Kirubakaran.
+[MIT](https://github.com/vikiru/discrete-sim/LICENSE) © 2023 Visakan Kirubakaran.
