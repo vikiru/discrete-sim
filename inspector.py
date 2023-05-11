@@ -10,6 +10,7 @@ from workstation import *
 class Inspector1:
     def __init__(self, env, work_station_list, policy_number):
         """Initialize Inspector1 with default values."""
+        
         self.env = env
         self.work_station_list = work_station_list
         self.policy_number = policy_number
@@ -21,6 +22,7 @@ class Inspector1:
 
     def get_name(self):
         """Used to identify Inspector1."""
+        
         return "Inspector 1"
 
     def determine_min_buffer(self):
@@ -29,6 +31,7 @@ class Inspector1:
         component to, based on the smallest size of the buffer.Adhering to
         a priority-based scheduling and finally return that workstation's buffer.
         """
+        
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -59,6 +62,7 @@ class Inspector1:
         probability of getting C1 (both have 40% chance, for a total of 80% chance),
         this means that workstation 1 only has a 20% chance of getting C1.
         """
+        
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -87,6 +91,7 @@ class Inspector1:
         This alternate policy focuses on giving workstation 1 more probability
         of getting C1 (60% chance) while workstation 2 and 3 only have 20% chance.
         """
+        
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -129,6 +134,7 @@ class Inspector1:
         instead of w1 having the highest priority, it now has the lowest priority
         as such, w3 > w2 > w1 is the new order of priority.
         """
+        
         w1_buffer = self.work_station_list[0].c1_buffer
         w2_buffer = self.work_station_list[1].c1_buffer
         w3_buffer = self.work_station_list[2].c1_buffer
@@ -147,6 +153,7 @@ class Inspector1:
         Allow the inspector to choose its operating policy based on an input policy number.
         Based on given policy number, the corresponding workstation's buffer is returned.
         """
+        
         num = self.policy_number
         if num == 0:
             return self.determine_min_buffer()
@@ -161,6 +168,7 @@ class Inspector1:
 
     def run(self):
         """Main process loop for Inspector1 where it will simulate inspection of components and placing into respective workstations."""
+        
         while True:
             # generate a service time based on mean from file and append to
             # list of service times for c1
@@ -184,6 +192,7 @@ class Inspector1:
 class Inspector2:
     def __init__(self, env, work_station_list):
         """Initialize Inspector2 with default values."""
+        
         self.env = env
         self.work_station_list = work_station_list
         self.filename_1 = "servinsp22.dat"  # c2 inspection time file
@@ -196,14 +205,17 @@ class Inspector2:
 
     def get_name(self):
         """Used to identify Inspector2."""
+        
         return "Inspector 2"
 
     def get_random_component(self):
         """Generate a random number between 0 and 1, 0 refers to a component C2 and 1 refers to a component C3."""
+        
         return random.randint(0, 1)
 
     def run(self):
         """Main process loop for Inspector2 where it will simulate inspection of components and placing into respective workstations."""
+        
         while True:
             if self.get_random_component() == 0:
                 # generate a service time based on mean from file and append to
