@@ -19,8 +19,11 @@ nav:
 
 theme:
   name: material
+  font:
+    text: Roboto
   language: en
   features:
+    - search.suggest
     - navigation.tracking
     - navigation.path
     - navigation.instant
@@ -30,6 +33,19 @@ theme:
     - navigation.footer
   icon:
     repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: cyan
+      accent: blue
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: blue
+      accent: cyan
 extra:
   social:
     - icon: fontawesome/brands/github
