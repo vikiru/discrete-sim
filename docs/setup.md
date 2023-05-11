@@ -12,13 +12,13 @@ Specific python package dependencies include the following:
 
 ## Setup Instructions
 
-1. Clone this repository to your local machine.
+Clone this repository to your local machine.
 
 ```bash
 git clone https://github.com/vikiru/discrete-sim.git
 ```
 
-2. Install all required Python dependencies (NumPy, SciPy, SimPy)
+Install all required Python dependencies (NumPy, SciPy, SimPy).
 
 ```bash
 pip install -r requirements.txt

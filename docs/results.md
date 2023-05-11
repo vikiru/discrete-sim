@@ -45,7 +45,7 @@ A comparison of each of the operating policies simulated at a time, t = 50000 un
 
 ## Result Folders
 
-- [Original Policy](https://github.com/vikiru/discrete-sim/results/tree/main/original_policy/)
+- [Original Policy](https://github.com/vikiru/discrete-sim/tree/main/results/original_policy)
 - [Random Policy - Equal Probability for C1](https://github.com/vikiru/discrete-sim/tree/main/results/random_policy_equal_probability/)
 - [Random Policy - Less Probability W1](https://github.com/vikiru/discrete-sim/tree/main/results/random_policy_equal_probability/)
 - [Random Policy - More Probability W1](https://github.com/vikiru/discrete-sim/tree/main/results/random_policy_equal_probability/)
