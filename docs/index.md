@@ -11,3 +11,7 @@ The manufacturing facility produces different products (P1, P2, P3) using differ
 <p align="justify">
 This repository showcases my term project for SYSC4005, in which I developed a discrete simulation model of a manufacturing facility based on the given problem statement. The purpose of this simulation study was to identify and evaluate an alternative operating policy that could enhance the system performance.
 </p>
+
+## Project Author
+
+This project was completed individually by Visakan Kirubakaran.

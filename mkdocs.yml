@@ -33,7 +33,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/vikiru
-copyright: Copyright &copy; 2022 - 2023 Visakan Kirubakaran
+copyright: Copyright &copy; 2023 Visakan Kirubakaran
 
 plugins:
   - search
