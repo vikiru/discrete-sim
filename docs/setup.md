@@ -27,5 +27,5 @@ git clone https://github.com/vikiru/discrete-sim.git
 Install all required Python dependencies (NumPy, SciPy, SimPy).
 
 ```bash
-pip install -r requirements.txt
+pip install -U -r requirements.txt
 ```
