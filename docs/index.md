@@ -9,11 +9,9 @@ text-align: justify;
 [![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
 
 <p align="center">
-    <a href="https://vikiru.github.io/discrete-sim/setup/">Prerequisites and Setup</a>
+    <a href="https://vikiru.github.io/discrete-sim/setup/">Setup</a>
     •
-    <a href="https://vikiru.github.io/discrete-sim/license/">Acknowledgements and License</a>
-    •
-    <a href="https://vikiru.github.io/discrete-sim/input_modeling/">Source Code Reference</a>
+    <a href="https://vikiru.github.io/discrete-sim/input_modeling/">Code</a>
     •
     <a href="https://vikiru.github.io/discrete-sim/usage/">Usage</a>
 </p>
