@@ -6,7 +6,7 @@ text-align: justify;
 
 # Discrete Simulation Project [Group 26] Docs!
 
-[![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-aqua)](https://github.com/vikiru/discrete-sim/blob/main/LICENSE)
 
 <p align="center">
     <a href="https://vikiru.github.io/discrete-sim/setup/">Setup</a>
