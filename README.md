@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-aqua)](LICENSE)
 [![Documentation](https://img.shields.io/badge/documentation-docs-orange)](https://vikiru.github.io/discrete-sim/)
 
 <h1 align="center"> SYSC4005 <br> Discrete Simulation Project </h1>
@@ -31,7 +31,7 @@ git clone https://github.com/vikiru/discrete-sim.git
 2. Install all required Python dependencies (NumPy, SciPy, SimPy)
 
 ```bash
-pip install -r requirements.txt
+pip install -U -r requirements.txt
 ```
 
 ## Running the Simulator
@@ -80,4 +80,4 @@ The results folder contains sub-folders for each policy, where the simulation re
 
 The contents of this repository are licensed under the terms and conditions of the [MIT](https://choosealicense.com/licenses/mit/) license.
 
-[MIT](https://github.com/vikiru/discrete-sim/blob/update-readme/LICENSE) © 2023 Visakan Kirubakaran.
+[MIT](LICENSE) © 2023 Visakan Kirubakaran.
