@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/license-MIT-aqua)](./LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-aqua)](LICENSE)
 [![Documentation](https://img.shields.io/badge/documentation-docs-orange)](https://vikiru.github.io/discrete-sim/)
 
 <h1 align="center"> SYSC4005 <br> Discrete Simulation Project </h1>
