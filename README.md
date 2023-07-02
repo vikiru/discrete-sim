@@ -1,7 +1,12 @@
-[![License](https://img.shields.io/badge/license-MIT-aqua)](LICENSE)
-[![Documentation](https://img.shields.io/badge/documentation-docs-orange)](https://vikiru.github.io/discrete-sim/)
-
 <h1 align="center"> SYSC4005 <br> Discrete Simulation Project </h1>
+<p align="center">
+  <a href="https://github.com/vikiru/discrete-sim/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-aqua" alt="MIT License"/>
+  </a>
+  <a href="https://vikiru.github.io/discrete-sim/">
+    <img src="https://img.shields.io/badge/documentation-docs-orange" alt="Documentation"/>
+  </a>
+</p>
 
 ## Project Description
 
