@@ -29,21 +29,21 @@ This repository showcases my term project for SYSC4005, in which I developed a d
 
 1. Clone this repository to your local machine.
 
-```bash
-git clone https://github.com/vikiru/discrete-sim.git
-cd discrete-sim
-```
+   ```bash
+   git clone https://github.com/vikiru/discrete-sim.git
+   cd discrete-sim
+   ```
 
-2. Install all required Python dependencies (NumPy, SciPy, SimPy)
+2. Install all required Python dependencies (NumPy, SciPy, SimPy).
 
-```bash
-pip install -U -r requirements.txt
-```
+   ```bash
+   pip install -U -r requirements.txt
+   ```
 
 ## Running the Simulator
 
 <p align="justify">
-This repository contains two simulators that model the behavior of a manufacturing facility under different operating policies. The original simulator implements the current policy that the facility follows, while the alternate simulator tests the current policy against the alternative policies that I have devised based on various criteria. 
+This repository contains two simulators that model the behavior of a manufacturing facility under different operating policies. The original simulator implements the current policy that the facility follows, while the alternate simulator tests the current policy against the alternative policies that I have devised based on various criteria.
 </p>
 
 <p align="justify">
@@ -65,11 +65,11 @@ python alternate_simulator.py
 ## Understanding the Results
 
 <p align="justify">
-The data folder contains the input data that is required for the simulation of the manufacturing facility. This data includes the servicing times of the inspectors who check the quality of the components, and the processing times of the workstations that assemble the components into products. 
+The data folder contains the input data that is required for the simulation of the manufacturing facility. This data includes the servicing times of the inspectors who check the quality of the components, and the processing times of the workstations that assemble the components into products.
 </p>
 
 <p align="justify">
-The policy comparison folder contains a text files that compare the performance of the original policy and the four alternative policies that were proposed to improve the efficiency of the facility. Each policy was simulated for a time period of t = 50000 units, which represents the duration of the production cycle. 
+The policy comparison folder contains a text files that compare the performance of the original policy and the four alternative policies that were proposed to improve the efficiency of the facility. Each policy was simulated for a time period of t = 50000 units, which represents the duration of the production cycle.
 </p>
 
 <p align="justify">
