@@ -31,6 +31,7 @@ This repository showcases my term project for SYSC4005, in which I developed a d
 
 ```bash
 git clone https://github.com/vikiru/discrete-sim.git
+cd discrete-sim
 ```
 
 2. Install all required Python dependencies (NumPy, SciPy, SimPy)

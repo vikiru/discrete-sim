@@ -1,3 +1,7 @@
+# .txt files from Simulation Runs
+policy_comparison/
+results/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
