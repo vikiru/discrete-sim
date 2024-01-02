@@ -1,5 +1,7 @@
 # Discrete Simulation Project
 
+<img src="./discrete-sim-demo.gif" alt="discrete-sim Demo"/>
+
 <p align="center">
     <a href="https://vikiru.github.io/discrete-sim/setup/">Setup</a>
     •
