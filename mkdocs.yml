@@ -1,0 +1,69 @@
+site_name: Discrete Simulation Project
+site_url: https://vikiru.github.io/discrete-sim/docs/
+repo_url: https://github.com/vikiru/discrete-sim
+repo_name: discrete-sim
+
+nav:
+  - Home: index.md
+  - Prerequistes and Setup: setup.md
+  - Acknowledgements & License: license.md
+  - Running the Simulator & Understanding the Results:
+      - Running the Simulator: usage.md
+      - Understanding the Results: results.md
+
+theme:
+  name: material
+  font:
+    text: Roboto
+  language: en
+  features:
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.instant
+    - navigation.path
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: cyan
+      accent: blue
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: blue
+      accent: cyan
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vikiru
+
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/viskirubakaran/
+
+    - icon: fontawesome/solid/briefcase
+      link: https://vikiru.github.io/
+
+copyright: Copyright &copy; 2024 Visakan Kirubakaran
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_root_heading: false
+            show_source: false
