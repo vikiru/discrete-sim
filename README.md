@@ -93,6 +93,7 @@ The results folder contains sub-folders for each policy, where the simulation re
 - [SciPy](https://scipy.org/) for statistical functions
 - [SimPy](https://simpy.readthedocs.io/en/latest/) to simulate the manufacturing facility
 - [MkDocs](https://www.mkdocs.org/) to generate documentation from Markdown files
+- [Material for MKDocs](https://squidfunk.github.io/mkdocs-material/) as the theme for MkDocs website
 - [GitHub Pages](https://pages.github.com/) to host the documentation website
 - [Shields Badges](https://github.com/badges/shields) for repository badges
 
