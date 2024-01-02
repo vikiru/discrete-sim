@@ -8,7 +8,7 @@
   </a>
 </p>
 
-## Project Description
+## 📝 Project Description
 
 <blockquote align="justify">
 The manufacturing facility produces different products (P1, P2, P3) using different combinations of raw components (C1, C2, C3). The components are cleaned and repaired by two inspectors before being sent to workstations (W1, W2, W3) that have buffers for storing them. The inspectors may get blocked if the buffers are full. The workstations start assembling products when they have all the required components. Inspector 1 sends component C1 to the workstation with the shortest queue, while Inspector 2 sends components C2 and C3 randomly. To produce the three products, the following combinations of components are used: P1 is made from C1, P2 is made from C1 and C2, and P3 is made from C1 and C3.
@@ -18,14 +18,25 @@ The manufacturing facility produces different products (P1, P2, P3) using differ
 This repository showcases my term project for SYSC4005, in which I developed a discrete simulation model of a manufacturing facility based on the given problem statement. The purpose of this simulation study was to identify and evaluate an alternative operating policy that could enhance the system performance.
 </p>
 
-## Prerequisites
+## 📖 Table of Contents
+
+- [📝 Project Description](#-project-description)
+- [📖 Table of Contents](#-table-of-contents)
+- [📝 Prerequisites](#-prerequisites)
+- [⚙️ Setup](#️-setup)
+- [🚀 Running the Simulator](#-running-the-simulator)
+- [💡 Understanding the Results](#-understanding-the-results)
+- [✨ Acknowledgements](#-acknowledgements)
+- [©️ License](#️-license)
+
+## 📝 Prerequisites
 
 - [Python](https://www.python.org/downloads/)
-  - [NumPy](https://numpy.org/install/)
-  - [SciPy](https://scipy.org/install/)
-  - [SimPy](https://pypi.org/project/simpy/)
+- [NumPy](https://numpy.org/install/)
+- [SciPy](https://scipy.org/install/)
+- [SimPy](https://pypi.org/project/simpy/)
 
-## Setup Instructions
+## ⚙️ Setup
 
 1. Clone this repository to your local machine.
 
@@ -34,13 +45,13 @@ This repository showcases my term project for SYSC4005, in which I developed a d
    cd discrete-sim
    ```
 
-2. Install all required Python dependencies (NumPy, SciPy, SimPy).
+2. Install all required Python dependencies.
 
    ```bash
    pip install -U -r requirements.txt
    ```
 
-## Running the Simulator
+## 🚀 Running the Simulator
 
 <p align="justify">
 This repository contains two simulators that model the behavior of a manufacturing facility under different operating policies. The original simulator implements the current policy that the facility follows, while the alternate simulator tests the current policy against the alternative policies that I have devised based on various criteria.
@@ -62,7 +73,7 @@ The alternate simulator can be started as follows:
 python alternate_simulator.py
 ```
 
-## Understanding the Results
+## 💡 Understanding the Results
 
 <p align="justify">
 The data folder contains the input data that is required for the simulation of the manufacturing facility. This data includes the servicing times of the inspectors who check the quality of the components, and the processing times of the workstations that assemble the components into products.
@@ -76,14 +87,17 @@ The policy comparison folder contains a text files that compare the performance 
 The results folder contains sub-folders for each policy, where the simulation results are stored as .txt files. Each file contains information such as the number of products produced, the average waiting time of the workstations, and the utilization rate of the workstations.
 </p>
 
-## Acknowledgements
+## ✨ Acknowledgements
 
-- Uses [NumPy](https://numpy.org/) for generating random values based on an exponential distribution.
-- Uses [SciPy](https://scipy.org/) for statistical functions.
-- Uses [SimPy](https://simpy.readthedocs.io/en/latest/) to simulate the manufacturing facility.
+- [NumPy](https://numpy.org/) for generating random values based on an exponential distribution
+- [SciPy](https://scipy.org/) for statistical functions
+- [SimPy](https://simpy.readthedocs.io/en/latest/) to simulate the manufacturing facility
+- [MkDocs](https://www.mkdocs.org/) to generate documentation from Markdown files
+- [GitHub Pages](https://pages.github.com/) to host the documentation website
+- [Shields Badges](https://github.com/badges/shields) for repository badges
 
-## License
+## ©️ License
 
 The contents of this repository are licensed under the terms and conditions of the [MIT](https://choosealicense.com/licenses/mit/) license.
 
-[MIT](LICENSE) © 2023 Visakan Kirubakaran.
+[MIT](LICENSE) © 2023-present Visakan Kirubakaran.
