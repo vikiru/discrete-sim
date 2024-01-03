@@ -1,16 +1,26 @@
-<h1 align="center"> Discrete Simulation Project </h1>
+<style>
+ #title {
+  margin: 0;
+ }
 
-<p align="center">
+ #menu {
+  margin: 0;
+ }
+
+</style>
+
+<h1 id="title" align="center"> Discrete Simulation Project </h1>
+
+<p align="center" id="menu">
     <a href="https://vikiru.github.io/discrete-sim/setup/">Setup</a>
     •
     <a href="https://vikiru.github.io/discrete-sim/input_modeling/">Code</a>
     •
     <a href="https://vikiru.github.io/discrete-sim/usage/">Usage</a>
     <br>
-      <a href="https://github.com/vikiru/discrete-sim/blob/main/LICENSE">
-        <img src="https://img.shields.io/badge/license-MIT-aqua"  alt="MIT License"/>
-      </a>
-    </img>
+    <a href="https://github.com/vikiru/discrete-sim/blob/main/LICENSE">
+      <img src="https://img.shields.io/badge/license-MIT-aqua"  alt="MIT License"/>
+    </a>
 </p>
 
 ## 📝 Project Description
