@@ -60,10 +60,3 @@ copyright: Copyright &copy; 2024 Visakan Kirubakaran
 
 plugins:
   - search
-  - mkdocstrings:
-      default_handler: python
-      handlers:
-        python:
-          options:
-            show_root_heading: false
-            show_source: false
