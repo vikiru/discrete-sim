@@ -40,16 +40,16 @@ This repository showcases my term project for SYSC4005, in which I developed a d
 
 1. Clone this repository to your local machine.
 
-   ```bash
-   git clone https://github.com/vikiru/discrete-sim.git
-   cd discrete-sim
-   ```
+```bash
+git clone https://github.com/vikiru/discrete-sim.git
+cd discrete-sim
+```
 
 2. Install all required Python dependencies.
 
-   ```bash
-   pip install -U -r requirements.txt
-   ```
+```bash
+pip install -U -r requirements.txt
+```
 
 ## 🚀 Running the Simulator
 
