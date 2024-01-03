@@ -1,4 +1,4 @@
-# Discrete Simulation Project
+<h1 align="center">Discrete Simulation Project</h1>
 
 <p align="center">
     <a href="https://vikiru.github.io/discrete-sim/setup/">Setup</a>
