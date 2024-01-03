@@ -22,14 +22,14 @@ This repository showcases my term project for SYSC4005, in which I developed a d
 
 - [📝 Project Description](#-project-description)
 - [📖 Table of Contents](#-table-of-contents)
-- [📝 Prerequisites](#-prerequisites)
+- [📋 Prerequisites](#-prerequisites)
 - [⚙️ Setup](#️-setup)
 - [🚀 Running the Simulator](#-running-the-simulator)
 - [💡 Understanding the Results](#-understanding-the-results)
 - [✨ Acknowledgements](#-acknowledgements)
 - [©️ License](#️-license)
 
-## 📝 Prerequisites
+## 📋 Prerequisites
 
 - [Python](https://www.python.org/downloads/)
 - [NumPy](https://numpy.org/install/)
