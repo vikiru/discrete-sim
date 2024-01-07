@@ -54,7 +54,11 @@ extra:
       link: https://www.linkedin.com/in/viskirubakaran/
 
     - icon: fontawesome/solid/briefcase
-      link: https://vikiru.github.io/
+      link: https://vikiru.vercel.app/
+
+  analytics:
+    provider: google
+    property: G-HXXH3ZQ027
 
 copyright: Copyright &copy; 2024 Visakan Kirubakaran
 
